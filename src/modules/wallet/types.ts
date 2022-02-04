@@ -24,6 +24,7 @@ export interface CreateWalletOptions {
   CHAIN_ID: string | number
   TRANSACTIONS_API_URL?: string
   POLL_INTERVAL?: number
+  ALLOWED_IDS?: string[] | number
 }
 
 export type AddEthereumChainParameters = {
