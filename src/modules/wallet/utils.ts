@@ -8,7 +8,7 @@ import {
   getContract,
   sendMetaTransaction
 } from 'decentraland-transactions'
-import { ChainId, getChainName } from '@dcl/schemas/dist/dapps/chain-id'
+import { ChainId, getChainName } from '@spacey/schemas/dist/dapps/chain-id'
 import {
   getConnectedProvider,
   getConnectedProviderChainId,

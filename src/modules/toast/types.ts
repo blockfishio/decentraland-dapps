@@ -1,3 +1,3 @@
-import { ToastProps } from 'decentraland-ui/dist/components/Toast/Toast'
+import { ToastProps } from 'spacey-ui/dist/components/Toast/Toast'
 
 export type Toast = { id: number } & ToastProps

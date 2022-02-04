@@ -10,8 +10,8 @@ import {
   select,
   fork
 } from 'redux-saga/effects'
-import { ChainId } from '@dcl/schemas/dist/dapps/chain-id'
-import { connection, Provider } from 'decentraland-connect'
+import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
+import { connection, Provider } from 'spacey-connect'
 import {
   getConnectedProvider,
   isCucumberProvider,

@@ -1,7 +1,7 @@
-import { ChainId } from '@dcl/schemas/dist/dapps/chain-id'
-import { Network } from '@dcl/schemas/dist/dapps/network'
-import { Provider } from 'decentraland-connect/dist/types'
-import { ProviderType } from '@dcl/schemas/dist/dapps/provider-type'
+import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
+import { Network } from '@spacey/schemas/dist/dapps/network'
+import { Provider } from 'spacey-connect/dist/types'
+import { ProviderType } from '@spacey/schemas/dist/dapps/provider-type'
 
 export { Provider, ProviderType }
 

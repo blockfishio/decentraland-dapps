@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux'
-import { LoginModalProps } from 'decentraland-ui/dist/components/LoginModal/LoginModal'
-import { ProviderType } from '@dcl/schemas/dist/dapps/provider-type'
+import { LoginModalProps } from 'spacey-ui/dist/components/LoginModal/LoginModal'
+import { ProviderType } from '@spacey/schemas/dist/dapps/provider-type'
 import { EnableWalletRequestAction } from '../../modules/wallet/actions'
 
 export type DefaultProps = { isLoading: boolean }

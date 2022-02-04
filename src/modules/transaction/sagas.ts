@@ -10,7 +10,7 @@ import {
   fork,
   delay
 } from 'redux-saga/effects'
-import { Provider } from 'decentraland-connect/dist/types'
+import { Provider } from 'spacey-connect/dist/types'
 import { Transaction, TransactionStatus, AnyTransaction } from './types'
 import {
   fetchTransactionFailure,

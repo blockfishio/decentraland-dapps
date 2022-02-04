@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux'
-import { ChainId } from '@dcl/schemas/dist/dapps/chain-id'
+import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
 import {
   Transaction,
   TransactionPayload,

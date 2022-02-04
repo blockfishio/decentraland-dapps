@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import { Button } from 'decentraland-ui/dist/components/Button/Button'
-import { ModalNavigation } from 'decentraland-ui/dist/components/ModalNavigation/ModalNavigation'
-import { Navbar as NavbarComponent, NavbarI18N } from 'decentraland-ui/dist/components/Navbar/Navbar'
-import { ProviderType } from '@dcl/schemas/dist/dapps/provider-type'
-import { getChainName } from '@dcl/schemas/dist/dapps/chain-id'
+import { Button } from 'spacey-ui/dist/components/Button/Button'
+import { ModalNavigation } from 'spacey-ui/dist/components/ModalNavigation/ModalNavigation'
+import { Navbar as NavbarComponent, NavbarI18N } from 'spacey-ui/dist/components/Navbar/Navbar'
+import { ProviderType } from '@spacey/schemas/dist/dapps/provider-type'
+import { getChainName } from '@spacey/schemas/dist/dapps/chain-id'
 import {
   getConnectedProviderChainId,
   getConnectedProviderType

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { Network } from '@dcl/schemas/dist/dapps/network'
+import { Network } from '@spacey/schemas/dist/dapps/network'
 import { isPending } from '../../modules/transaction/utils'
 import {
   getAddress,

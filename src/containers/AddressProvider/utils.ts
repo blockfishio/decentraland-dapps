@@ -1,5 +1,5 @@
 import { ethers } from 'ethers'
-import { ChainId } from '@dcl/schemas'
+import { ChainId } from '@spacey/schemas'
 import { getNetworkProvider } from '../../lib/eth'
 
 export const isENSAddress = (address: string) => {

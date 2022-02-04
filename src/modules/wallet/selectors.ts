@@ -1,5 +1,5 @@
-import { ChainId } from '@dcl/schemas'
-import { Network } from '@dcl/schemas/dist/dapps/network'
+import { ChainId } from '@spacey/schemas'
+import { Network } from '@spacey/schemas/dist/dapps/network'
 import { isLoadingType } from '../loading/selectors'
 import { CONNECT_WALLET_REQUEST, ENABLE_WALLET_REQUEST } from './actions'
 import { WalletState } from './reducer'

@@ -1,4 +1,4 @@
-import { ChainId } from '@dcl/schemas'
+import { ChainId } from '@spacey/schemas'
 import React from 'react'
 
 export enum AddressError {

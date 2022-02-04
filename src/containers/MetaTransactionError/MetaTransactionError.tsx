@@ -1,6 +1,6 @@
 import React from 'react'
-import { getChainName, Network } from '@dcl/schemas'
-import { Button, Row } from 'decentraland-ui'
+import { getChainName, Network } from '@spacey/schemas'
+import { Button, Row } from 'spacey-ui'
 import { t } from '../../modules/translation/utils'
 import { getChainIdByNetwork } from '../../lib/eth'
 import { Props } from './MetaTransactionError.types'

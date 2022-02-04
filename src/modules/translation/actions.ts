@@ -1,5 +1,5 @@
 import { action } from 'typesafe-actions'
-import { Locale } from 'decentraland-ui/dist/components/Language/Language'
+import { Locale } from 'spacey-ui/dist/components/Language/Language'
 import { TranslationKeys } from './types'
 
 // Fetch translations

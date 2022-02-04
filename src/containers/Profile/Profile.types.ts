@@ -1,4 +1,4 @@
-import { ProfileProps } from 'decentraland-ui/dist/components/Profile/Profile'
+import { ProfileProps } from 'spacey-ui/dist/components/Profile/Profile'
 import {
   loadProfileRequest,
   LoadProfileRequestAction

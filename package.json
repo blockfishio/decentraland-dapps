@@ -1,10 +1,11 @@
 {
-  "name": "decentraland-dapps",
+  "name": "spacey-dapps",
   "version": "0.0.0-development",
   "dependencies": {
     "@0xsequence/multicall": "^0.25.1",
     "@0xsequence/relayer": "^0.25.1",
     "@dcl/schemas": "^3.1.1",
+    "@spacey/schemas": "file:../common-schemas",
     "@types/flat": "0.0.28",
     "@types/uuid": "^3.4.3",
     "axios": "^0.21.1",
@@ -19,6 +20,8 @@
     "redux-persistence": "^1.2.0",
     "redux-persistence-engine-localstorage": "^1.0.0",
     "redux-storage-decorator-filter": "^1.1.8",
+    "spacey-connect": "file:../decentraland-connect",
+    "spacey-ui": "file:../ui",
     "tslint": "^5.7.0",
     "tslint-config-prettier": "^1.10.0",
     "typesafe-actions": "^2.0.3",

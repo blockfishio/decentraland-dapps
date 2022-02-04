@@ -1,6 +1,6 @@
-import { ChainId } from '@dcl/schemas/dist/dapps/chain-id'
-import { Network } from '@dcl/schemas/dist/dapps/network'
-import { RPC_URLS } from 'decentraland-connect/dist/connectors/NetworkConnector'
+import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
+import { Network } from '@spacey/schemas/dist/dapps/network'
+import { RPC_URLS } from 'spacey-connect/dist/connectors/NetworkConnector'
 
 export const MANA_GRAPH_BY_CHAIN_ID = {
   [ChainId.ETHEREUM_MAINNET]:

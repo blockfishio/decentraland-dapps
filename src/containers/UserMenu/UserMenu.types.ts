@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { UserMenuProps } from 'decentraland-ui/dist/components/UserMenu/UserMenu'
+import { UserMenuProps } from 'spacey-ui/dist/components/UserMenu/UserMenu'
 import {
   ConnectWalletRequestAction,
   DisconnectWalletAction
@@ -21,4 +21,4 @@ export type MapDispatchProps = Pick<Props, 'onSignOut'>
 export type MapDispatch = Dispatch<
   ConnectWalletRequestAction | DisconnectWalletAction
 >
-export type OwnProps = Partial<Props>
+export type OwnProps = Partial<Props> & Pick<Props, never>

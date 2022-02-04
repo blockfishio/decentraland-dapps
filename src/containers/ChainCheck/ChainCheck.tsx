@@ -1,9 +1,9 @@
 import React from 'react'
-import { Popup } from 'decentraland-ui/dist/components/Popup/Popup'
+import { Popup } from 'spacey-ui/dist/components/Popup/Popup'
 import { T } from '../../modules/translation/utils'
 import { getConnectedProviderChainId } from '../../lib/eth'
 import { Props } from './ChainCheck.types'
-import { getChainName } from '@dcl/schemas/dist/dapps/chain-id'
+import { getChainName } from '@spacey/schemas/dist/dapps/chain-id'
 import ChainProvider from '../ChainProvider'
 
 export default class ChainCheck extends React.PureComponent<Props> {
