@@ -6,7 +6,7 @@ import {
   LoginModalOptionI18N,
   LoginModalOptionType
 } from 'spacey-ui/dist/components/LoginModal/LoginModal'
-import { ProviderType } from '@spacey/schemas/dist/dapps/provider-type'
+import { ProviderType } from '@spacey2025/schemas/dist/dapps/provider-type'
 import { T, t } from '../../modules/translation/utils'
 import { DefaultProps, Props, State } from './LoginModal.types'
 import { toModalOptionType, toProviderType } from './utils'

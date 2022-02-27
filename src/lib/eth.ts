@@ -1,8 +1,8 @@
 import { connection, Provider } from 'spacey-connect'
-import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
-import { Network } from '@spacey/schemas/dist/dapps/network'
+import { ChainId } from '@spacey2025/schemas/dist/dapps/chain-id'
+import { Network } from '@spacey2025/schemas/dist/dapps/network'
 import { providers } from 'ethers'
-import { ProviderType } from '@spacey/schemas/dist/dapps/provider-type'
+import { ProviderType } from '@spacey2025/schemas/dist/dapps/provider-type'
 import { getChainConfiguration } from './chainConfiguration'
 import { isMobile } from './utils'
 

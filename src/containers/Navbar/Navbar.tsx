@@ -3,8 +3,8 @@ import * as React from 'react'
 import { Button } from 'spacey-ui/dist/components/Button/Button'
 import { ModalNavigation } from 'spacey-ui/dist/components/ModalNavigation/ModalNavigation'
 import { Navbar as NavbarComponent, NavbarI18N } from 'spacey-ui/dist/components/Navbar/Navbar'
-import { ProviderType } from '@spacey/schemas/dist/dapps/provider-type'
-import { getChainName } from '@spacey/schemas/dist/dapps/chain-id'
+import { ProviderType } from '@spacey2025/schemas/dist/dapps/provider-type'
+import { getChainName } from '@spacey2025/schemas/dist/dapps/chain-id'
 import {
   getConnectedProviderChainId,
   getConnectedProviderType

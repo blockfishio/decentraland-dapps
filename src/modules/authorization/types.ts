@@ -1,5 +1,5 @@
-import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
-import { ContractName } from 'decentraland-transactions'
+import { ChainId } from '@spacey2025/schemas/dist/dapps/chain-id'
+import { ContractName } from 'spacey-transactions'
 
 export enum AuthorizationType {
   ALLOWANCE = 'allowance',

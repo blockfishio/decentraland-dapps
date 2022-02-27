@@ -1,7 +1,7 @@
 import { expectSaga } from 'redux-saga-test-plan'
 import * as matchers from 'redux-saga-test-plan/matchers'
 import { call } from 'redux-saga/effects'
-import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
+import { ChainId } from '@spacey2025/schemas/dist/dapps/chain-id'
 import { Provider } from 'spacey-connect'
 import { createWalletSaga } from './sagas'
 import {

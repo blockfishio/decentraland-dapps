@@ -10,6 +10,9 @@ import {
 } from 'web3x/contract'
 import { Eth } from 'web3x/eth'
 import abi from './ERC20Abi'
+import abijson from './ERC20.json'
+import { ChainId } from '@spacey2025/schemas'
+import { ContractData } from '../modules/wallet/types'
 export type MintEvent = {
   to: Address
   amount: string
@@ -116,3 +119,70 @@ export class ERC20 extends Contract<ERC20Definition> {
   }
 }
 export var ERC20Abi = abi
+
+
+export const erc20: Record<ChainId, ContractData> = {
+  [ChainId.MATIC_MUMBAI]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC20',
+    chainId: ChainId.MATIC_MUMBAI
+  },
+  [ChainId.MATIC_MAINNET]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC20',
+    chainId: ChainId.MATIC_MAINNET
+  },
+  [ChainId.ETHEREUM_MAINNET]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC20',
+    chainId: ChainId.ETHEREUM_MAINNET
+  },
+  [ChainId.ETHEREUM_ROPSTEN]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC20',
+    chainId: ChainId.ETHEREUM_ROPSTEN
+  },
+  [ChainId.ETHEREUM_RINKEBY]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC20',
+    chainId: ChainId.ETHEREUM_RINKEBY
+  },
+  [ChainId.ETHEREUM_KOVAN]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC20',
+    chainId: ChainId.ETHEREUM_KOVAN
+  },
+  [ChainId.ETHEREUM_GOERLI]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC20',
+    chainId: ChainId.ETHEREUM_GOERLI
+  },
+  [ChainId.BSC_MAINNET]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC20',
+    chainId: ChainId.BSC_MAINNET
+  },
+  [ChainId.BSC_TESTNET]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC20',
+    chainId: ChainId.BSC_TESTNET
+  },
+}

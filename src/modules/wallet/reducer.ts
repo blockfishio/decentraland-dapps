@@ -1,5 +1,5 @@
 import { loadingReducer, LoadingState } from '../loading/reducer'
-import { ChainId } from '@spacey/schemas'
+import { ChainId } from '@spacey2025/schemas'
 import { Wallet } from './types'
 import {
   ConnectWalletRequestAction,

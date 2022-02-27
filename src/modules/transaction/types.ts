@@ -1,5 +1,5 @@
 import { TransactionResponse, TransactionReceipt } from 'web3x/formatters'
-import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
+import { ChainId } from '@spacey2025/schemas/dist/dapps/chain-id'
 
 export enum TransactionStatus {
   QUEUED = 'queued',

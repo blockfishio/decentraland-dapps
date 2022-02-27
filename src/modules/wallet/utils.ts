@@ -4,11 +4,14 @@ import { Eth } from 'web3x/eth'
 import { Address } from 'web3x/address'
 import {
   ContractData,
-  ContractName,
-  getContract,
+  // ContractName,
+  // getContract,
   sendMetaTransaction
-} from 'decentraland-transactions'
-import { ChainId, getChainName } from '@spacey/schemas/dist/dapps/chain-id'
+} from 'spacey-transactions'
+import {
+  ChainId,
+  //  getChainName 
+} from '@spacey2025/schemas/dist/dapps/chain-id'
 import {
   getConnectedProvider,
   getConnectedProviderChainId,
@@ -16,17 +19,48 @@ import {
   getNetworkProvider
 } from '../../lib/eth'
 import { getChainConfiguration } from '../../lib/chainConfiguration'
-import { AddEthereumChainParameters, Networks, Wallet } from './types'
+import {
+
+  // AddEthereumChainParameters,
+  Networks, Wallet
+} from './types'
+import erc20abi from '../../contracts/ERC20.json'
+
 
 let TRANSACTIONS_API_URL = 'https://transactions-api.decentraland.co/v1'
+
+
+
 export const getTransactionsApiUrl = () => TRANSACTIONS_API_URL
 export const setTransactionsApiUrl = (url: string) =>
   (TRANSACTIONS_API_URL = url)
 
+
+
+function getSPAYContract(chainId: ChainId) {
+  const spayAddresses = {
+    [ChainId.ETHEREUM_MAINNET]: '0x58fad9e3c3ae54c9ba98c3f0e4bf88ab3e8cf3c5',
+    [ChainId.ETHEREUM_ROPSTEN]: '0x4Eb8f76bC1ec5fCACdE01D909A8Ce87C33fCC80B',
+    [ChainId.BSC_MAINNET]: '0x13A637026dF26F846D55ACC52775377717345c06'
+  }
+
+  const res = {
+    abi: erc20abi,
+    address: spayAddresses[chainId],
+    name: "SPAY",
+    version: "1.0",
+    chainId: chainId
+  }
+  return res
+}
+
+
+
+
 export async function fetchManaBalance(chainId: ChainId, address: string) {
   try {
     const provider = await getNetworkProvider(chainId)
-    const contract = getContract(ContractName.MANAToken, chainId)
+    const contract = getSPAYContract(chainId)
     const mana = new Contract(
       contract.address,
       contract.abi,
@@ -62,7 +96,7 @@ export async function buildWallet(): Promise<Wallet> {
   const expectedChainConfig = getChainConfiguration(expectedChainId)
   const networks: Partial<Networks> = {}
 
-  for (const network of Object.keys(expectedChainConfig.networkMapping)) {
+  for (const network of Object.keys(chainConfig.networkMapping)) {
     const networkChainId = expectedChainConfig.networkMapping[network]
     networks[network] = {
       chainId: networkChainId,
@@ -166,52 +200,52 @@ export async function sendTransaction(
   }
 }
 
-export function getAddEthereumChainParameters(
-  chainId: ChainId
-): AddEthereumChainParameters {
-  const hexChainId = '0x' + chainId.toString(16)
-  const chainName = getChainName(chainId)!
-  const config = getChainConfiguration(chainId)
-  switch (chainId) {
-    case ChainId.MATIC_MAINNET:
-      return {
-        chainId: hexChainId,
-        chainName,
-        nativeCurrency: {
-          name: 'MATIC',
-          symbol: 'MATIC',
-          decimals: 18
-        },
-        rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
-        blockExplorerUrls: ['https://polygonscan.com/']
-      }
-    case ChainId.MATIC_MUMBAI:
-      return {
-        chainId: hexChainId,
-        chainName,
-        nativeCurrency: {
-          name: 'MATIC',
-          symbol: 'MATIC',
-          decimals: 18
-        },
-        rpcUrls: ['https://rpc-mumbai.maticvigil.com/'],
-        blockExplorerUrls: ['https://mumbai.polygonscan.com/']
-      }
-    case ChainId.ETHEREUM_MAINNET:
-    case ChainId.ETHEREUM_ROPSTEN:
-    case ChainId.ETHEREUM_RINKEBY:
-    case ChainId.ETHEREUM_KOVAN:
-    case ChainId.ETHEREUM_GOERLI:
-      return {
-        chainId: hexChainId,
-        chainName,
-        nativeCurrency: {
-          name: 'Ether',
-          symbol: 'ETH',
-          decimals: 18
-        },
-        rpcUrls: [config.rpcURL],
-        blockExplorerUrls: ['https://etherscan.io']
-      }
-  }
-}
+// export function getAddEthereumChainParameters(
+//   chainId: ChainId
+// ): AddEthereumChainParameters {
+//   const hexChainId = '0x' + chainId.toString(16)
+//   const chainName = getChainName(chainId)!
+//   const config = getChainConfiguration(chainId)
+//   switch (chainId) {
+//     case ChainId.MATIC_MAINNET:
+//       return {
+//         chainId: hexChainId,
+//         chainName,
+//         nativeCurrency: {
+//           name: 'MATIC',
+//           symbol: 'MATIC',
+//           decimals: 18
+//         },
+//         rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
+//         blockExplorerUrls: ['https://polygonscan.com/']
+//       }
+//     case ChainId.MATIC_MUMBAI:
+//       return {
+//         chainId: hexChainId,
+//         chainName,
+//         nativeCurrency: {
+//           name: 'MATIC',
+//           symbol: 'MATIC',
+//           decimals: 18
+//         },
+//         rpcUrls: ['https://rpc-mumbai.maticvigil.com/'],
+//         blockExplorerUrls: ['https://mumbai.polygonscan.com/']
+//       }
+//     case ChainId.ETHEREUM_MAINNET:
+//     case ChainId.ETHEREUM_ROPSTEN:
+//     case ChainId.ETHEREUM_RINKEBY:
+//     case ChainId.ETHEREUM_KOVAN:
+//     case ChainId.ETHEREUM_GOERLI:
+//       return {
+//         chainId: hexChainId,
+//         chainName,
+//         nativeCurrency: {
+//           name: 'Ether',
+//           symbol: 'ETH',
+//           decimals: 18
+//         },
+//         rpcUrls: [config.rpcURL],
+//         blockExplorerUrls: ['https://etherscan.io']
+//       }
+//   }
+// }

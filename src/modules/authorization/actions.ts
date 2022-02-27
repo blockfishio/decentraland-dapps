@@ -1,4 +1,4 @@
-import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
+import { ChainId } from '@spacey2025/schemas/dist/dapps/chain-id'
 import { action } from 'typesafe-actions'
 import { buildTransactionPayload } from '../transaction/utils'
 import { Authorization } from './types'

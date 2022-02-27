@@ -33,7 +33,11 @@
         "marketplace": "Marketplace",
         "builder": "Builder",
         "events": "Events",
-        "dao": "DAO"
+        "dao": "DAO",
+        "getstarted": "Get Started",
+        "getspay": "Get Spay",
+        "leaderboard": "Leaderboard",
+        "info": "Info"
       },
       "wrong_network": {
         "header": "Wrong Network",

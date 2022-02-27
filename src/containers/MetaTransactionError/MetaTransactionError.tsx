@@ -1,5 +1,5 @@
 import React from 'react'
-import { getChainName, Network } from '@spacey/schemas'
+import { getChainName, Network } from '@spacey2025/schemas'
 import { Button, Row } from 'spacey-ui'
 import { t } from '../../modules/translation/utils'
 import { getChainIdByNetwork } from '../../lib/eth'

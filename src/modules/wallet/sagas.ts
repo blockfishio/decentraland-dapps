@@ -10,10 +10,13 @@ import {
   select,
   fork
 } from 'redux-saga/effects'
-import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
-import { connection, Provider } from 'spacey-connect'
+import { ChainId } from '@spacey2025/schemas/dist/dapps/chain-id'
 import {
-  getConnectedProvider,
+  connection,
+  // Provider 
+} from 'spacey-connect'
+import {
+  // getConnectedProvider,
   isCucumberProvider,
   isValidChainId
 } from '../../lib/eth'
@@ -41,19 +44,19 @@ import {
   FetchWalletSuccessAction,
   FetchWalletFailureAction,
   CONNECT_WALLET_SUCCESS,
-  SWITCH_NETWORK_REQUEST,
-  SwitchNetworkRequestAction,
-  switchNetworkSuccess,
-  switchNetworkFailure,
-  SWITCH_NETWORK_SUCCESS,
-  SwitchNetworkSuccessAction,
+  // SWITCH_NETWORK_REQUEST,
+  // SwitchNetworkRequestAction,
+  // switchNetworkSuccess,
+  // switchNetworkFailure,
+  // SWITCH_NETWORK_SUCCESS,
+  // SwitchNetworkSuccessAction,
   setAppChainId
 } from './actions'
 import {
   buildWallet,
-  getAddEthereumChainParameters,
-  getTransactionsApiUrl,
-  setTransactionsApiUrl
+  // getAddEthereumChainParameters,
+  // getTransactionsApiUrl,
+  // setTransactionsApiUrl
 } from './utils'
 import { CreateWalletOptions, Wallet } from './types'
 import { isConnected } from './selectors'
@@ -89,8 +92,8 @@ export function* walletSaga() {
     takeEvery(FETCH_WALLET_REQUEST, handleFetchWalletRequest),
     takeEvery(DISCONNECT_WALLET, handleDisconnectWallet),
     takeEvery(CONNECT_WALLET_SUCCESS, handleConnectWalletSuccess),
-    takeEvery(SWITCH_NETWORK_REQUEST, handleSwitchNetworkRequest),
-    takeEvery(SWITCH_NETWORK_SUCCESS, handleSwitchNetworkSucces)
+    // takeEvery(SWITCH_NETWORK_REQUEST, handleSwitchNetworkRequest),
+    // takeEvery(SWITCH_NETWORK_SUCCESS, handleSwitchNetworkSucces)
   ])
 }
 
@@ -181,57 +184,57 @@ function* handleConnectWalletSuccess() {
   }
 }
 
-function* handleSwitchNetworkRequest(action: SwitchNetworkRequestAction) {
-  const { chainId } = action.payload
-  const provider: Provider | null = yield call(getConnectedProvider)
-  try {
-    if (!provider) {
-      throw new Error('Could not get provider')
-    }
-    yield call([provider, 'request'], {
-      method: 'wallet_switchEthereumChain',
-      params: [{ chainId: '0x' + chainId.toString(16) }]
-    })
-    yield put(switchNetworkSuccess(chainId))
-  } catch (switchError) {
-    // This error code indicates that the chain has not been added to MetaMask.
-    if (provider && switchError.code === 4902) {
-      try {
-        yield call([provider, 'request'], {
-          method: 'wallet_addEthereumChain',
-          params: [getAddEthereumChainParameters(chainId)]
-        })
-        const newChainId: string = yield call([provider, 'request'], {
-          method: 'eth_chainId',
-          params: []
-        })
-        if (chainId !== parseInt(newChainId, 16)) {
-          throw new Error('chainId did not change after adding network')
-        }
-        yield put(switchNetworkSuccess(chainId))
-        return
-      } catch (addError) {
-        yield put(
-          switchNetworkFailure(
-            chainId,
-            `Error adding network: ${addError.message}`
-          )
-        )
-        return
-      }
-    }
-    yield put(
-      switchNetworkFailure(
-        chainId,
-        `Error switching network: ${switchError.message}`
-      )
-    )
-  }
-}
+// function* handleSwitchNetworkRequest(action: SwitchNetworkRequestAction) {
+//   const { chainId } = action.payload
+//   const provider: Provider | null = yield call(getConnectedProvider)
+//   try {
+//     if (!provider) {
+//       throw new Error('Could not get provider')
+//     }
+//     yield call([provider, 'request'], {
+//       method: 'wallet_switchEthereumChain',
+//       params: [{ chainId: '0x' + chainId.toString(16) }]
+//     })
+//     yield put(switchNetworkSuccess(chainId))
+//   } catch (switchError) {
+//     // This error code indicates that the chain has not been added to MetaMask.
+//     if (provider && switchError.code === 4902) {
+//       try {
+//         yield call([provider, 'request'], {
+//           method: 'wallet_addEthereumChain',
+//           params: [getAddEthereumChainParameters(chainId)]
+//         })
+//         const newChainId: string = yield call([provider, 'request'], {
+//           method: 'eth_chainId',
+//           params: []
+//         })
+//         if (chainId !== parseInt(newChainId, 16)) {
+//           throw new Error('chainId did not change after adding network')
+//         }
+//         yield put(switchNetworkSuccess(chainId))
+//         return
+//       } catch (addError) {
+//         yield put(
+//           switchNetworkFailure(
+//             chainId,
+//             `Error adding network: ${addError.message}`
+//           )
+//         )
+//         return
+//       }
+//     }
+//     yield put(
+//       switchNetworkFailure(
+//         chainId,
+//         `Error switching network: ${switchError.message}`
+//       )
+//     )
+//   }
+// }
 
-function* handleSwitchNetworkSucces(_action: SwitchNetworkSuccessAction) {
-  yield put(fetchWalletRequest())
-}
+// function* handleSwitchNetworkSucces(_action: SwitchNetworkSuccessAction) {
+//   yield put(fetchWalletRequest())
+// }
 
 export function createWalletSaga(options: CreateWalletOptions) {
   if (isValidChainId(options.CHAIN_ID)) {
@@ -254,13 +257,13 @@ export function createWalletSaga(options: CreateWalletOptions) {
     POLL_INTERVAL = options.POLL_INTERVAL
   }
 
-  if (options.TRANSACTIONS_API_URL) {
-    setTransactionsApiUrl(options.TRANSACTIONS_API_URL)
-  } else {
-    console.warn(
-      `"TRANSACTIONS_API_URL" not provided on createWalletSaga, using default value "${getTransactionsApiUrl()}".`
-    )
-  }
+  // if (options.TRANSACTIONS_API_URL) {
+  //   setTransactionsApiUrl(options.TRANSACTIONS_API_URL)
+  // } else {
+  //   console.warn(
+  //     `"TRANSACTIONS_API_URL" not provided on createWalletSaga, using default value "${getTransactionsApiUrl()}".`
+  //   )
+  // }
 
   return walletSaga
 }

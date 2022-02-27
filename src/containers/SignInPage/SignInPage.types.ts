@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { ProviderType } from '@spacey/schemas/dist/dapps/provider-type'
+import { ProviderType } from '@spacey2025/schemas/dist/dapps/provider-type'
 import { SignInProps } from 'spacey-ui/dist/components/SignIn/SignIn'
 import { EnableWalletRequestAction } from '../../modules/wallet/actions'
 

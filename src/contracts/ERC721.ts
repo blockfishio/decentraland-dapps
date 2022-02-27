@@ -10,6 +10,10 @@ import {
 } from 'web3x/contract'
 import { Eth } from 'web3x/eth'
 import abi from './ERC721Abi'
+import abijson from './ERC721.json'
+
+import { ChainId } from '@spacey2025/schemas'
+import { ContractData } from '../modules/wallet/types'
 export type TransferEvent = {
   _from: Address
   _to: Address
@@ -108,3 +112,69 @@ export class ERC721 extends Contract<ERC721Definition> {
   }
 }
 export var ERC721Abi = abi
+
+export const erc721: Record<ChainId, ContractData> = {
+  [ChainId.MATIC_MUMBAI]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC271',
+    chainId: ChainId.MATIC_MUMBAI
+  },
+  [ChainId.MATIC_MAINNET]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC271',
+    chainId: ChainId.MATIC_MAINNET
+  },
+  [ChainId.ETHEREUM_MAINNET]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC271',
+    chainId: ChainId.ETHEREUM_MAINNET
+  },
+  [ChainId.ETHEREUM_ROPSTEN]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC271',
+    chainId: ChainId.ETHEREUM_ROPSTEN
+  },
+  [ChainId.ETHEREUM_RINKEBY]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC271',
+    chainId: ChainId.ETHEREUM_RINKEBY
+  },
+  [ChainId.ETHEREUM_KOVAN]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC271',
+    chainId: ChainId.ETHEREUM_KOVAN
+  },
+  [ChainId.ETHEREUM_GOERLI]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC271',
+    chainId: ChainId.ETHEREUM_GOERLI
+  },
+  [ChainId.BSC_MAINNET]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC271',
+    chainId: ChainId.BSC_MAINNET
+  },
+  [ChainId.BSC_TESTNET]: {
+    version: '2',
+    abi: abijson,
+    address: '',
+    name: 'ERC271',
+    chainId: ChainId.BSC_TESTNET
+  }
+}

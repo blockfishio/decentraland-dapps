@@ -1,7 +1,7 @@
-import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
-import { Network } from '@spacey/schemas/dist/dapps/network'
+import { ChainId } from '@spacey2025/schemas/dist/dapps/chain-id'
+import { Network } from '@spacey2025/schemas/dist/dapps/network'
 import { Provider } from 'spacey-connect/dist/types'
-import { ProviderType } from '@spacey/schemas/dist/dapps/provider-type'
+import { ProviderType } from '@spacey2025/schemas/dist/dapps/provider-type'
 
 export { Provider, ProviderType }
 
@@ -38,4 +38,21 @@ export type AddEthereumChainParameters = {
   rpcUrls: string[]
   blockExplorerUrls?: string[]
   iconUrls?: string[] // Currently ignored.
+}
+
+export enum ContractName {
+
+  ERC20 = 'ERC20',
+  ERC721 = 'ERC721',
+  MANAToken = 'MANAToken',
+  MarketplaceV2 = 'MarketplaceV2',
+
+}
+
+export type ContractData = {
+  abi: object[]
+  address: string
+  name: string
+  version: string
+  chainId: ChainId
 }

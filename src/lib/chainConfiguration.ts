@@ -1,5 +1,5 @@
-import { ChainId } from '@spacey/schemas/dist/dapps/chain-id'
-import { Network } from '@spacey/schemas/dist/dapps/network'
+import { ChainId } from '@spacey2025/schemas/dist/dapps/chain-id'
+import { Network } from '@spacey2025/schemas/dist/dapps/network'
 import { RPC_URLS } from 'spacey-connect/dist/connectors/NetworkConnector'
 
 export const MANA_GRAPH_BY_CHAIN_ID = {
@@ -20,27 +20,35 @@ export const MANA_GRAPH_BY_CHAIN_ID = {
 const NETWORK_MAPPING_BY_CHAIN_ID = {
   [ChainId.ETHEREUM_MAINNET]: {
     [Network.ETHEREUM]: ChainId.ETHEREUM_MAINNET,
-    [Network.MATIC]: ChainId.MATIC_MAINNET
+    [Network.BSC]: ChainId.BSC_MAINNET
   },
   [ChainId.ETHEREUM_ROPSTEN]: {
     [Network.ETHEREUM]: ChainId.ETHEREUM_ROPSTEN,
-    [Network.MATIC]: ChainId.MATIC_MUMBAI
+    [Network.BSC]: ChainId.BSC_TESTNET
   },
   [ChainId.ETHEREUM_GOERLI]: {
     [Network.ETHEREUM]: ChainId.ETHEREUM_GOERLI,
-    [Network.MATIC]: ChainId.MATIC_MUMBAI
+    [Network.BSC]: ChainId.BSC_TESTNET
   },
   [ChainId.ETHEREUM_RINKEBY]: {
     [Network.ETHEREUM]: ChainId.ETHEREUM_RINKEBY,
-    [Network.MATIC]: ChainId.MATIC_MUMBAI
+    [Network.BSC]: ChainId.BSC_TESTNET
   },
   [ChainId.MATIC_MAINNET]: {
     [Network.ETHEREUM]: ChainId.MATIC_MAINNET,
-    [Network.MATIC]: ChainId.MATIC_MAINNET
+    [Network.BSC]: ChainId.BSC_MAINNET
   },
   [ChainId.MATIC_MUMBAI]: {
     [Network.ETHEREUM]: ChainId.MATIC_MUMBAI,
-    [Network.MATIC]: ChainId.MATIC_MUMBAI
+    [Network.BSC]: ChainId.BSC_MAINNET
+  },
+  [ChainId.BSC_MAINNET]: {
+    [Network.ETHEREUM]: ChainId.ETHEREUM_MAINNET,
+    [Network.BSC]: ChainId.BSC_MAINNET
+  },
+  [ChainId.BSC_TESTNET]: {
+    [Network.ETHEREUM]: ChainId.ETHEREUM_ROPSTEN,
+    [Network.BSC]: ChainId.BSC_TESTNET
   }
 }
 
@@ -51,7 +59,9 @@ const NETWORK_BY_CHAIN_ID: Record<ChainId, Network> = {
   [ChainId.ETHEREUM_KOVAN]: Network.ETHEREUM,
   [ChainId.ETHEREUM_RINKEBY]: Network.ETHEREUM,
   [ChainId.MATIC_MAINNET]: Network.MATIC,
-  [ChainId.MATIC_MUMBAI]: Network.MATIC
+  [ChainId.MATIC_MUMBAI]: Network.MATIC,
+  [ChainId.BSC_MAINNET]: Network.BSC,
+  [ChainId.BSC_TESTNET]: Network.BSC
 }
 
 type ChainConfiguration = {

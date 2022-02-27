@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { ProviderType } from '@spacey/schemas/dist/dapps/provider-type'
+import { ProviderType } from '@spacey2025/schemas/dist/dapps/provider-type'
 import { getChainId } from '../../modules/wallet/selectors'
 import { getChainConfiguration } from '../../lib/chainConfiguration'
 import {
