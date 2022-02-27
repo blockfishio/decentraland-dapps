@@ -1,6 +1,6 @@
 {
   "name": "spacey-dapps",
-  "version": "0.0.0-development",
+  "version": "0.0.3-development",
   "dependencies": {
     "@0xsequence/multicall": "^0.25.1",
     "@0xsequence/relayer": "^0.25.1",
@@ -15,9 +15,9 @@
     "redux-persistence": "^1.2.0",
     "redux-persistence-engine-localstorage": "^1.0.0",
     "redux-storage-decorator-filter": "^1.1.8",
-    "spacey-connect": "^0.0.0-development",
+    "spacey-connect": "^0.0.1-development",
     "spacey-transactions": "^0.0.1-development",
-    "spacey-ui": "^0.0.1-development",
+    "spacey-ui": "^0.0.2-development",
     "tslint": "^5.7.0",
     "tslint-config-prettier": "^1.10.0",
     "typesafe-actions": "^2.0.3",
