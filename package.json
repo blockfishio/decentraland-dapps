@@ -1,6 +1,6 @@
 {
   "name": "spacey-dapps",
-  "version": "0.0.3-development",
+  "version": "0.0.7-development",
   "dependencies": {
     "@0xsequence/multicall": "^0.25.1",
     "@0xsequence/relayer": "^0.25.1",
