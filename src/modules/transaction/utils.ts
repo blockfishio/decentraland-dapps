@@ -96,6 +96,10 @@ export function getTransactionOrigin(
       return 'https://explorer-mainnet.maticvigil.com'
     case ChainId.MATIC_MUMBAI:
       return 'https://explorer-mumbai.maticvigil.com'
+    case ChainId.BSC_MAINNET:
+      return 'https://bscscan.com'
+    case ChainId.BSC_TESTNET:
+      return 'https://testnet.bscscan.com'
     default:
       return 'https://etherscan.io'
   }
